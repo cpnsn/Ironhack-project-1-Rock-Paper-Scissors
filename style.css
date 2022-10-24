@@ -54,23 +54,23 @@ section {
 }
 
 .icons {
-  display: flex;
+  /*display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
   height: 7em;
   width: 7em;
   margin: 0 11px 0 11px;
 }
 
-.charactersBtn {
+.charactersImg {
   height: 9em;
   width: 9em;
-  align-content: center;
+  /*align-content: center;*/
   cursor: pointer;
   transition: 100ms;
 }
 
-.charactersBtn:hover {
+.charactersImg:hover {
   transform: scale(1.1);
 }
 
@@ -112,10 +112,22 @@ button {
 }
 
 .results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 12em;
   width: 12em;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   margin: 0 1em 0 1em;
+}
+
+.gameImg {
+  height: 90%;
+  align-content: center;
+}
+
+#youChoice {
+  border-bottom: 1px solid white;
 }
 
 /*.spinner {
