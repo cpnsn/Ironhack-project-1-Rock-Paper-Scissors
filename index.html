@@ -18,16 +18,17 @@
         <!-- = encadré de gauche-->
         <div id="characters">
           <div class="icons">
-            <button class="charactersBtn">
+            <button class="charactersBtn" id="yoda">
               <img
                 class="charactersImg"
                 src="./images/yoda-green.png"
                 alt="Yoda"
+                data-name="Yoda"
               />
             </button>
           </div>
           <div class="icons">
-            <button class="charactersBtn">
+            <button class="charactersBtn" id="anakin">
               <img
                 class="charactersImg"
                 src="./images/anakin.png"
@@ -36,22 +37,22 @@
             </button>
           </div>
           <div class="icons">
-            <button class="charactersBtn">
+            <button class="charactersBtn" id="R2D2">
               <img class="charactersImg" src="./images/R2D2.png" alt="R2D2" />
             </button>
           </div>
           <div class="icons">
-            <button class="charactersBtn">
+            <button class="charactersBtn" id="C3PO">
               <img class="charactersImg" src="./images/C3PO.png" alt="C3PO" />
             </button>
           </div>
           <div class="icons">
-            <button class="charactersBtn">
+            <button class="charactersBtn" id="BB8">
               <img class="charactersImg" src="./images/BB8.png" alt="BB8" />
             </button>
           </div>
           <div class="icons">
-            <button class="charactersBtn">
+            <button class="charactersBtn" id="chewbacca">
               <img
                 class="charactersImg"
                 src="./images/chewbacca-yellow.png"
@@ -64,7 +65,7 @@
               <img
                 class="charactersImg"
                 src="./images/dark-vador.png"
-                alt="Darth Vador"
+                alt="Darth Vader"
               />
             </button>
           </div>
@@ -75,6 +76,7 @@
             <div class="resultsName"><span>you</span></div>
             <div class="resultsName"><span>computer</span></div>
           </div>
+
           <div class="gameDivs">
             <div class="results" id="youChoice">
               <img
@@ -83,17 +85,23 @@
                 alt="Question mark"
               />
             </div>
-            <div class="results">
+            <div class="results" id="computerChoice">
               <img
                 class="gameImg"
+                id="computer-img"
                 src="./images/Question-mark.png"
                 alt="Question mark"
               />
             </div>
           </div>
+
           <div class="gameDivs">
-            <div class="results"></div>
-            <div></div>
+            <div class="gameResults" id="leftGameResults">
+              <span>score</span>
+            </div>
+            <div class="gameResults" id="rightGameResults">
+              <span>score</span>
+            </div>
           </div>
         </div>
 
