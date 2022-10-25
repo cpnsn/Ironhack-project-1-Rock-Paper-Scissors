@@ -14,7 +14,16 @@
     </header>
 
     <main>
-      <section>
+      <section id="start-page">
+        <div id="startPage">
+          <button>
+            <span class="purple">P</span><span class="orange">L</span>
+            <span class="purple">A</span><span class="orange">Y</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="gamePage" class="hidden">
         <!-- = encadré de gauche-->
         <div id="characters">
           <div class="icons">
@@ -73,8 +82,8 @@
 
         <div id="game">
           <div class="gameDivs">
-            <div class="resultsName"><span>you</span></div>
-            <div class="resultsName"><span>computer</span></div>
+            <div class="resultsName">you</div>
+            <div class="resultsName">computer</div>
           </div>
 
           <div class="gameDivs">
@@ -94,19 +103,25 @@
               />
             </div>
           </div>
-
+          <div class="gameDivs">
+            <div id="winner"></div>
+          </div>
           <div class="gameDivs">
             <div class="gameResults" id="leftGameResults">
-              <span>score</span>
+              <div><span>score</span></div>
+              <div id="youResults"></div>
             </div>
             <div class="gameResults" id="rightGameResults">
-              <span>score</span>
+              <div><span>score</span></div>
+              <div id="computerResults"></div>
             </div>
           </div>
         </div>
 
         <!---<div class="spinner"></div>-->
       </section>
+
+      <!--<section><div id="gameRules"><p id="scroller">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, enim non optio aut cupiditate expedita quos accusantium perferendis dolorum sed aliquam vel tempore illum. Fugiat aliquid perspiciatis expedita molestias illum.</p></P></div></section>-->
     </main>
 
     <script src="./index.js"></script>
