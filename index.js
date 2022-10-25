@@ -47,6 +47,7 @@ function checkWinner(player, computer) {
   console.log(playerSelection, computerSelection);
   if (playerSelection === computerSelection) {
     console.log(`It's a tie!`);
+    //YODA
   } else if (
     playerSelection === "Yoda" &&
     computerSelection === "Anakin Skywalker"
@@ -64,6 +65,75 @@ function checkWinner(player, computer) {
   } else if (playerSelection === "Yoda" && computerSelection === "C3PO") {
     console.log("Computer wins!");
   } else if (playerSelection === "C3PO" && computerSelection === "Yoda") {
+    console.log("You win!");
+  } else if (playerSelection === "Yoda" && computerSelection === "BB8") {
+    console.log("Computer wins!");
+  } else if (playerSelection === "BB8" && computerSelection === "Yoda") {
+    console.log("You win!");
+  } else if (playerSelection === "Yoda" && computerSelection === "Chewbacca") {
+    console.log("You win!");
+  } else if (playerSelection === "Chewbacca" && computerSelection === "Yoda") {
+    console.log("Computer wins!");
+  } else if (
+    playerSelection === "Yoda" &&
+    computerSelection === "Darth Vader"
+  ) {
+    console.log("You win!");
+  } else if (
+    playerSelection === "Darth Vader" &&
+    computerSelection === "Yoda"
+  ) {
+    console.log("Computer wins!");
+    // ANAKIN
+  } else if (
+    playerSelection === "Anakin Skywalker" &&
+    computerSelection === "R2D2"
+  ) {
+    console.log("Computer wins!");
+  } else if (
+    playerSelection === "R2D2" &&
+    computerSelection === "Anakin Skywalker"
+  ) {
+    console.log("You win!");
+  } else if (
+    playerSelection === "Anakin Skywalker" &&
+    computerSelection === "C3PO"
+  ) {
+    console.log("You win!");
+  } else if (
+    playerSelection === "C3PO" &&
+    computerSelection === "Anakin Skywalker"
+  ) {
+    console.log("Computer wins!");
+  } else if (
+    playerSelection === "Anakin Skywalker" &&
+    computerSelection === "BB8"
+  ) {
+    console.log("Computer wins!");
+  } else if (
+    playerSelection === "BB8" &&
+    computerSelection === "Anakin Skywalker"
+  ) {
+    console.log("You win!");
+  } else if (
+    playerSelection === "Anakin Skywalker" &&
+    computerSelection === "Chewbacca"
+  ) {
+    console.log("You win!");
+  } else if (
+    playerSelection === "Chewbacca" &&
+    computerSelection === "Anakin Skywalker"
+  ) {
+    console.log("Computer wins!");
+  } else if (
+    playerSelection === "Anakin Skywalker" &&
+    computerSelection === "Darth Vader"
+  ) {
+    console.log("Computer wins!");
+  } else if (
+    playerSelection === "Darth Vader" &&
+    computerSelection === "Anakin Skywalker"
+  ) {
     console.log("You win!");
   }
 }
