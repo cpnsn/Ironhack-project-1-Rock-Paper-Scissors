@@ -17,14 +17,10 @@ let AnakinWhat = new Audio("./Sounds/Anakin what-i-done.mp3");
 let AnakinUnfair = new Audio("./Sounds/Anakin unfair.mp3");
 let BB8Win = new Audio("./Sounds/BB8 - Win.mp3");
 let BB8Sad = new Audio("./Sounds/BB8 - Sad.mp3");
+
 let youScore = 0;
 let computerScore = 0;
-const yodaBtn = document.querySelector("#yoda");
-const anakinBtn = document.querySelector("#anakin");
-const R2D2Btn = document.querySelector("#R2D2");
-const C3POBtn = document.querySelector("#C3PO");
-const BB8Btn = document.querySelector("#BB8");
-const chewbaccaBtn = document.querySelector("#chewbacca");
+
 const startPage = document.querySelector("#startPage");
 
 const charactersBtn = document.querySelectorAll(".charactersBtn");
@@ -37,13 +33,15 @@ const imgArr = [...allImages].map((img) => {
 const computerChoice = imgArr;
 
 const winner = document.querySelector("#winner");
-const pWinner = document.createElement("p");
 const textTie = document.createTextNode("IT'S A TIE!");
 const textYouWin = document.createTextNode("You win!");
 const textComputerWins = document.createTextNode("Computer wins!");
 const scoreYou = document.querySelector("#youResults");
 const scoreComputer = document.querySelector("#computerResults");
 
+// __________________________________________________________________________________________________
+
+// Select player, display it while replacing question mark
 const play = charactersBtn.forEach((button) => {
   const img = button.querySelector("img");
   const youChoiceImg = document.querySelector(".gameImg");
@@ -52,6 +50,7 @@ const play = charactersBtn.forEach((button) => {
     youChoiceImg.alt = img.alt;
     const computerChoiceImg = document.querySelector("#computer-img");
     computerChoiceImg.src = "./images/Question-mark.png";
+    // Ramdom choice of player for computer, display choice while replacing question mark
     setTimeout(() => {
       const randomImg = imgArr[Math.floor(Math.random() * imgArr.length)];
       computerChoiceImg.src = randomImg.src;
@@ -66,10 +65,13 @@ function checkWinner(player, computer) {
   const computerSelection = computer.alt;
   console.log(playerSelection, computerSelection);
   winner.innerHTML = "";
+
+  // TIE____________________________________________________________________
   if (playerSelection === computerSelection) {
     winner.append(textTie);
     tieAudio.play();
-    //YODA
+
+    // YODA__________________________________________________________________
   } else if (
     playerSelection === "Yoda" &&
     computerSelection === "Anakin Skywalker"
@@ -130,7 +132,8 @@ function checkWinner(player, computer) {
     winner.append(textComputerWins);
     VaderLose.play();
     scoreComputer.textContent = ++computerScore;
-    // ANAKIN
+
+    // ANAKIN__________________________________________________________________
   } else if (
     playerSelection === "Anakin Skywalker" &&
     computerSelection === "R2D2"
@@ -201,7 +204,8 @@ function checkWinner(player, computer) {
     winner.appendChild(textYouWin);
     VaderWin.play();
     scoreYou.textContent = ++youScore;
-    // R2D2
+
+    // R2D2_________________________________________________________________________________
   } else if (playerSelection === "R2D2" && computerSelection === "C3PO") {
     winner.appendChild(textYouWin);
     R2D2WinAudio.play();
@@ -240,7 +244,8 @@ function checkWinner(player, computer) {
     winner.appendChild(textYouWin);
     VaderWin.play();
     scoreYou.textContent = ++youScore;
-    // C3PO
+
+    // C3PO_____________________________________________________________________________
   } else if (playerSelection === "C3PO" && computerSelection === "BB8") {
     winner.appendChild(textYouWin);
     C3POWin.play();
@@ -271,7 +276,8 @@ function checkWinner(player, computer) {
     winner.appendChild(textYouWin);
     VaderWin.play();
     scoreYou.textContent = ++youScore;
-    //BB8
+
+    //BB8_____________________________________________________________________________________
   } else if (playerSelection === "BB8" && computerSelection === "Chewbacca") {
     winner.append(textComputerWins);
     BB8Sad.play();
@@ -288,7 +294,8 @@ function checkWinner(player, computer) {
     winner.append(textComputerWins);
     VaderWhat.play();
     scoreComputer.textContent = ++computerScore;
-    // CHEWBACCA
+
+    // CHEWBACCA_______________________________________________________________
   } else if (
     playerSelection === "Chewbacca" &&
     computerSelection === "Darth Vader"
@@ -306,6 +313,7 @@ function checkWinner(player, computer) {
   }
 }
 
+// START PAGE
 startPage.addEventListener("click", () => {
   document.querySelector("#start-page").classList.add("hidden");
   document.querySelector("#gamePage").classList.remove("hidden");

@@ -51,7 +51,7 @@ section {
   width: 30vw;*/
   height: 500px;
   width: 500px;
-  margin: 8vh 3vw 0 5vw;
+  margin: 8vh 3vw 0 8vw;
   border: 2px solid #d87a50;
   border-radius: 60px;
   background-color: #3b2f4b;
@@ -92,8 +92,8 @@ button {
   justify-content: center;
   align-items: center;
   height: 75vh;
-  width: 55vw;
-  margin-right: 5vw;
+  width: 50vw;
+  margin-right: 8vw;
   border: 1px solid lightgray;
   border-radius: 1em;
   background: #ae613e;
@@ -203,14 +203,29 @@ button {
 }
 
 #gameRules {
-  width: 25em;
-  height: 5em;
-  margin: -10vh 0 0 8vw;
-  color: #daa38a;
+  width: 33em;
+  height: 7em;
+  /* border: 0.5px solid #daa38a; */
+  margin: -11vh 0 0 9vw;
+  color: white;
+  font-size: 0.9em;
   overflow-y: scroll;
-  scrollbar-color: #daa38a #240b4a;
-  text-align: center;
+  /* scrollbar-color: #daa38a #240b4a; */
+  text-align: justify;
   font-family: "Abel", sans-serif;
+}
+
+/* NE FONCTIONNE PAS */
+*::-webkit-scrollbar-thumb {
+  background-color: #daa38a;
+}
+
+#scroller {
+  margin: 1em;
+}
+
+.addSpace {
+  margin-bottom: 10px;
 }
 
 .hidden {
