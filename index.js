@@ -1,3 +1,22 @@
+let tieAudio = new Audio("./Sounds/Tie medium-2.mp3");
+let R2D2SadAudio = new Audio("./Sounds/Sad R2D2.mp3");
+let R2D2WinAudio = new Audio("./Sounds/Laughing R2D2.mp3");
+let YodaSadAudio = new Audio("./Sounds/Yoda retreat.mp3");
+let YodaWinAudio = new Audio("./Sounds/Yoda hmmmm.mp3");
+let ChewSadAudio = new Audio("./Sounds/Sad Chewbacca.mp3");
+let ChewWinAudio = new Audio("./Sounds/Win Chew.mp3");
+let C3POWin = new Audio("./Sounds/ C3PO they-think-im-god.mp3");
+let C3PODoomed = new Audio("./Sounds/C3PO doomed.mp3");
+let C3POMadness = new Audio("./Sounds/C3PO madness.mp3");
+let C3PORude = new Audio("./Sounds/C3PO how-rude.mp3");
+let VaderWin = new Audio("./Sounds/Vador treated-unfairly.mp3");
+let VaderLose = new Audio("./Sounds/Vador the-force-is-strong.mp3");
+let VaderWhat = new Audio("./Sounds/Vador what.mp3");
+let AnakinWin = new Audio("./Sounds/Anakin force-be-w-you.mp3");
+let AnakinWhat = new Audio("./Sounds/Anakin what-i-done.mp3");
+let AnakinUnfair = new Audio("./Sounds/Anakin unfair.mp3");
+let BB8Win = new Audio("./Sounds/BB8 - Win.mp3");
+let BB8Sad = new Audio("./Sounds/BB8 - Sad.mp3");
 let youScore = 0;
 let computerScore = 0;
 const yodaBtn = document.querySelector("#yoda");
@@ -49,54 +68,67 @@ function checkWinner(player, computer) {
   winner.innerHTML = "";
   if (playerSelection === computerSelection) {
     winner.append(textTie);
+    tieAudio.play();
     //YODA
   } else if (
     playerSelection === "Yoda" &&
     computerSelection === "Anakin Skywalker"
   ) {
     winner.append(textComputerWins);
+    YodaSadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "Anakin Skywalker" &&
     computerSelection === "Yoda"
   ) {
     winner.appendChild(textYouWin);
+    AnakinWin.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "Yoda" && computerSelection === "R2D2") {
     winner.appendChild(textYouWin);
+    YodaWinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "R2D2" && computerSelection === "Yoda") {
     winner.append(textComputerWins);
+    R2D2SadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (playerSelection === "Yoda" && computerSelection === "C3PO") {
     winner.append(textComputerWins);
+    YodaSadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (playerSelection === "C3PO" && computerSelection === "Yoda") {
     winner.appendChild(textYouWin);
+    C3POWin.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "Yoda" && computerSelection === "BB8") {
     winner.append(textComputerWins);
+    YodaSadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (playerSelection === "BB8" && computerSelection === "Yoda") {
     winner.appendChild(textYouWin);
+    BB8Win.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "Yoda" && computerSelection === "Chewbacca") {
     winner.appendChild(textYouWin);
+    YodaWinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "Chewbacca" && computerSelection === "Yoda") {
     winner.append(textComputerWins);
+    ChewSadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "Yoda" &&
     computerSelection === "Darth Vader"
   ) {
     winner.appendChild(textYouWin);
+    YodaWinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (
     playerSelection === "Darth Vader" &&
     computerSelection === "Yoda"
   ) {
     winner.append(textComputerWins);
+    VaderLose.play();
     scoreComputer.textContent = ++computerScore;
     // ANAKIN
   } else if (
@@ -104,129 +136,157 @@ function checkWinner(player, computer) {
     computerSelection === "R2D2"
   ) {
     winner.append(textComputerWins);
+    AnakinUnfair.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "R2D2" &&
     computerSelection === "Anakin Skywalker"
   ) {
     winner.appendChild(textYouWin);
+    R2D2WinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (
     playerSelection === "Anakin Skywalker" &&
     computerSelection === "C3PO"
   ) {
     winner.appendChild(textYouWin);
+    AnakinWin.play();
     scoreYou.textContent = ++youScore;
   } else if (
     playerSelection === "C3PO" &&
     computerSelection === "Anakin Skywalker"
   ) {
     winner.append(textComputerWins);
+    C3PORude.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "Anakin Skywalker" &&
     computerSelection === "BB8"
   ) {
     winner.append(textComputerWins);
+    AnakinUnfair.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "BB8" &&
     computerSelection === "Anakin Skywalker"
   ) {
     winner.appendChild(textYouWin);
+    BB8Win.play();
     scoreYou.textContent = ++youScore;
   } else if (
     playerSelection === "Anakin Skywalker" &&
     computerSelection === "Chewbacca"
   ) {
     winner.appendChild(textYouWin);
+    AnakinWin.play();
     scoreYou.textContent = ++youScore;
   } else if (
     playerSelection === "Chewbacca" &&
     computerSelection === "Anakin Skywalker"
   ) {
     winner.append(textComputerWins);
+    ChewSadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "Anakin Skywalker" &&
     computerSelection === "Darth Vader"
   ) {
     winner.append(textComputerWins);
+    AnakinWhat.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "Darth Vader" &&
     computerSelection === "Anakin Skywalker"
   ) {
     winner.appendChild(textYouWin);
+    VaderWin.play();
     scoreYou.textContent = ++youScore;
     // R2D2
   } else if (playerSelection === "R2D2" && computerSelection === "C3PO") {
     winner.appendChild(textYouWin);
+    R2D2WinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "C3PO" && computerSelection === "R2D2") {
     winner.append(textComputerWins);
+    C3POMadness.play();
     scoreComputer.textContent = ++computerScore;
   } else if (playerSelection === "R2D2" && computerSelection === "BB8") {
     winner.appendChild(textYouWin);
+    R2D2WinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "BB8" && computerSelection === "R2D2") {
     winner.append(textComputerWins);
+    BB8Sad.play();
     scoreComputer.textContent = ++computerScore;
   } else if (playerSelection === "R2D2" && computerSelection === "Chewbacca") {
     winner.append(textComputerWins);
+    R2D2SadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (playerSelection === "Chewbacca" && computerSelection === "R2D2") {
     winner.appendChild(textYouWin);
+    ChewWinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (
     playerSelection === "R2D2" &&
     computerSelection === "Darth Vader"
   ) {
     winner.append(textComputerWins);
+    R2D2SadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "Darth Vader" &&
     computerSelection === "R2D2"
   ) {
     winner.appendChild(textYouWin);
+    VaderWin.play();
     scoreYou.textContent = ++youScore;
     // C3PO
   } else if (playerSelection === "C3PO" && computerSelection === "BB8") {
     winner.appendChild(textYouWin);
+    C3POWin.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "BB8" && computerSelection === "C3PO") {
     winner.append(textComputerWins);
+    BB8Sad.play();
     scoreComputer.textContent = ++computerScore;
   } else if (playerSelection === "C3PO" && computerSelection === "Chewbacca") {
     winner.appendChild(textYouWin);
+    C3POWin.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "Chewbacca" && computerSelection === "C3PO") {
     winner.append(textComputerWins);
+    ChewSadAudio.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "C3PO" &&
     computerSelection === "Darth Vader"
   ) {
     winner.append(textComputerWins);
+    C3PODoomed.play();
     scoreComputer.textContent = ++computerScore;
   } else if (
     playerSelection === "Darth Vader" &&
     computerSelection === "C3PO"
   ) {
     winner.appendChild(textYouWin);
+    VaderWin.play();
     scoreYou.textContent = ++youScore;
     //BB8
   } else if (playerSelection === "BB8" && computerSelection === "Chewbacca") {
     winner.append(textComputerWins);
+    BB8Sad.play();
     scoreComputer.textContent = ++computerScore;
   } else if (playerSelection === "Chewbacca" && computerSelection === "BB8") {
     winner.appendChild(textYouWin);
+    ChewWinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "BB8" && computerSelection === "Darth Vader") {
     winner.appendChild(textYouWin);
+    BB8Win.play();
     scoreYou.textContent = ++youScore;
   } else if (playerSelection === "Darth Vader" && computerSelection === "BB8") {
     winner.append(textComputerWins);
+    VaderWhat.play();
     scoreComputer.textContent = ++computerScore;
     // CHEWBACCA
   } else if (
@@ -234,12 +294,14 @@ function checkWinner(player, computer) {
     computerSelection === "Darth Vader"
   ) {
     winner.append(textYouWin);
+    ChewWinAudio.play();
     scoreYou.textContent = ++youScore;
   } else if (
     playerSelection === "Darth Vader" &&
     computerSelection === "Chewbacca"
   ) {
     winner.appendChild(textComputerWins);
+    VaderWhat.play();
     scoreComputer.textContent = ++computerScore;
   }
 }
