@@ -17,6 +17,8 @@ let AnakinWhat = new Audio("./Sounds/Anakin what-i-done.mp3");
 let AnakinUnfair = new Audio("./Sounds/Anakin unfair.mp3");
 let BB8Win = new Audio("./Sounds/BB8 - Win.mp3");
 let BB8Sad = new Audio("./Sounds/BB8 - Sad.mp3");
+let youWin = new Audio("./Sounds/main-theme.mp3");
+let youLoose = new Audio("./Sounds/theme-song.mp3");
 
 let youScore = 0;
 let computerScore = 0;
@@ -316,11 +318,17 @@ function checkWinner(player, computer) {
   }
   if (scoreComputer.textContent == 10) {
     endGameMessage.textContent = "Computer won, GAME OVER!";
+    setTimeout(() => {
+      youLoose.play();
+    }, "1500");
     // modal.classList.add("lost");
     modal.showModal();
     console.log("Computer won, game over!");
   } else if (scoreYou.textContent == 10) {
     endGameMessage.textContent = "Congrats, YOU WON!";
+    setTimeout(() => {
+      youWin.play();
+    }, "1500");
     // modal.classList.add("win");
     modal.showModal();
     console.log("Congrats, you won!");
