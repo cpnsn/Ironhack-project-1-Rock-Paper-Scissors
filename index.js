@@ -21,11 +21,14 @@ let BB8Sad = new Audio("./Sounds/BB8 - Sad.mp3");
 let youScore = 0;
 let computerScore = 0;
 
-const startPage = document.querySelector("#startPage");
+const startPage = document.querySelector(".startPage");
 
 const charactersBtn = document.querySelectorAll(".charactersBtn");
 const youChoice = document.querySelector("#youChoice");
 const allImages = document.querySelectorAll(".charactersImg");
+const modal = document.getElementById("modal");
+const buttonEndGame = document.querySelector("dialogBtn");
+const endGameMessage = document.getElementById("end-game-message");
 const imgArr = [...allImages].map((img) => {
   return { src: img.src, alt: img.alt };
 });
@@ -311,10 +314,22 @@ function checkWinner(player, computer) {
     VaderWhat.play();
     scoreComputer.textContent = ++computerScore;
   }
+  if (scoreComputer.textContent == 10) {
+    endGameMessage.textContent = "Computer won, GAME OVER!";
+    modal.classList.add("lost");
+    modal.showModal();
+    console.log("Computer won, game over!");
+  } else if (scoreYou.textContent == 10) {
+    endGameMessage.textContent = "Congrats, YOU WON!";
+    modal.classList.add("win");
+    modal.showModal();
+    console.log("Congrats, you won!");
+  }
 }
 
 // START PAGE
 startPage.addEventListener("click", () => {
-  document.querySelector("#start-page").classList.add("hidden");
+  document.querySelector(".start-page").classList.add("hidden");
   document.querySelector("#gamePage").classList.remove("hidden");
+  document.querySelector("#scrollerSection").classList.remove("hidden");
 });
