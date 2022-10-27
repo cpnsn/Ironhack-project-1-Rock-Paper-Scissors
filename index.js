@@ -316,12 +316,12 @@ function checkWinner(player, computer) {
   }
   if (scoreComputer.textContent == 10) {
     endGameMessage.textContent = "Computer won, GAME OVER!";
-    modal.classList.add("lost");
+    // modal.classList.add("lost");
     modal.showModal();
     console.log("Computer won, game over!");
   } else if (scoreYou.textContent == 10) {
     endGameMessage.textContent = "Congrats, YOU WON!";
-    modal.classList.add("win");
+    // modal.classList.add("win");
     modal.showModal();
     console.log("Congrats, you won!");
   }

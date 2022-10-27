@@ -121,7 +121,7 @@ button {
 }
 
 #winner {
-  height: 2em;
+  height: 1em;
   font-family: "Press Start 2P", cursive;
   color: #daa38a;
   font-size: 2em;
@@ -195,6 +195,47 @@ button {
 
 .mayTheForce {
   text-align: center;
+}
+
+.YodaColor {
+  /* background-color: fade(rgb(168, 240, 168), 50%); */
+  color: rgb(180, 255, 180);
+}
+
+.R2D2color {
+  color: rgb(169, 176, 255);
+}
+
+.C3POcolor {
+  color: rgb(252, 221, 67);
+}
+
+.BB8color {
+  color: rgb(255, 188, 87);
+}
+
+.ANAKINcolor {
+  color: rgb(248, 176, 244);
+}
+
+.CHEWcolor {
+  color: rgb(177, 150, 150);
+}
+
+.VADERcolor {
+  color: rgb(255, 165, 165);
+}
+
+.marginTop {
+  margin-top: 25px;
+}
+
+.scrollerWelcome {
+  text-align: center;
+}
+
+.welcomeSize {
+  font-size: 17px;
 }
 
 .hidden {
